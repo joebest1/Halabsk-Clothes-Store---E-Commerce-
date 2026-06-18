@@ -1,0 +1,25 @@
+@model CategoryPageViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<main class="site-shell">
+    <partial name="_SiteHeader" />
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="@Model.SearchPlaceholder" />
+    </div>
+
+    <section class="section-block">
+        <div class="section-heading">
+            <span class="tag">@Model.Tag</span>
+            <h2>@Model.Heading</h2>
+        </div>
+
+        <div id="products" class="products-grid" data-category="@Model.Category"></div>
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/js/category-page.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,33 @@
+@{
+    var currentUser = Context.Session.GetCurrentUser();
+    var cartCount = Context.Session.GetCartCount();
+}
+
+<header class="site-header centered-header">
+    <nav class="site-nav product-nav">
+        <a asp-controller="Store" asp-action="Index">الرئيسية</a>
+        <a asp-controller="Store" asp-action="Products">المنتجات</a>
+        <a asp-controller="Store" asp-action="Cart" class="cart-nav-link" aria-label="سلة التسوق">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-badge" id="nav-cart-count">@cartCount</span>
+        </a>
+        <a asp-controller="Store" asp-action="Contact">تواصل</a>
+    </nav>
+
+    <a class="brand-logo centered-logo" asp-controller="Store" asp-action="Index">هلبسك</a>
+
+    <div class="header-actions">
+        @if (currentUser is null)
+        {
+            <a class="secondary-button link-button compact-button" asp-controller="Account" asp-action="Login">Sign In</a>
+            <a class="primary-button link-button compact-button" asp-controller="Account" asp-action="Signup">Sign Up</a>
+        }
+        else
+        {
+            <span class="helper-text header-user">أهلا، @currentUser.FullName</span>
+            <form asp-controller="Account" asp-action="Logout" method="post" class="inline-form">
+                <button type="submit" class="secondary-button compact-button">تسجيل الخروج</button>
+            </form>
+        }
+    </div>
+</header>

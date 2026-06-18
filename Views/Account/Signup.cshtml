@@ -1,0 +1,95 @@
+@{
+    ViewData["Title"] = "إنشاء حساب";
+}
+
+<main class="page-shell auth-shell">
+    <section class="brand-panel">
+        <div class="brand-copy">
+            <span class="eyebrow">Join The Brand</span>
+            <h1>هلبسك</h1>
+            <p>
+                أنشئ حسابك وابدأ رحلة تسوق أسرع، احفظ المفضلة، وتابع أحدث الإصدارات
+                والعروض المصممة على ذوقك.
+            </p>
+        </div>
+
+        <div class="feature-card feature-card-top">
+            <span>Style Match</span>
+            <strong>اختيارات مخصصة تناسب شخصيتك وإطلالتك</strong>
+        </div>
+
+        <div class="feature-card feature-card-bottom">
+            <span>Fast Checkout</span>
+            <strong>احفظ بياناتك واطلب في ثوانٍ</strong>
+        </div>
+    </section>
+
+    <section class="login-panel">
+        <div class="login-card">
+            <div class="card-header">
+                <span class="tag">Create Account</span>
+                <h2>افتح حساب جديد</h2>
+                <p>املأ البيانات التالية للانضمام إلى مجتمع هلبسك.</p>
+            </div>
+
+            <form class="login-form" id="auth-form" data-mode="signup" novalidate>
+                <label for="fullName">الاسم الكامل</label>
+                <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    placeholder="اكتب اسمك الكامل"
+                    autocomplete="name" />
+                <small class="field-error" data-error-for="fullName"></small>
+
+                <label for="email">البريد الإلكتروني</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="name@example.com"
+                    autocomplete="email" />
+                <small class="field-error" data-error-for="email"></small>
+
+                <label for="password">كلمة المرور</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="8 أحرف أو أكثر"
+                    autocomplete="new-password" />
+                <small class="field-error" data-error-for="password"></small>
+
+                <label for="confirmPassword">تأكيد كلمة المرور</label>
+                <input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type="password"
+                    placeholder="أعد كتابة كلمة المرور"
+                    autocomplete="new-password" />
+                <small class="field-error" data-error-for="confirmPassword"></small>
+
+                <div class="form-row">
+                    <label class="checkbox">
+                        <input type="checkbox" name="terms" />
+                        <span>أوافق على الشروط وسياسة الخصوصية</span>
+                    </label>
+                </div>
+
+                <button type="submit" id="submit-button" class="primary-button">
+                    إنشاء الحساب
+                </button>
+            </form>
+
+            <p class="form-message" id="form-message" aria-live="polite"></p>
+            <p class="helper-text">
+                لديك حساب بالفعل؟
+                <a asp-controller="Account" asp-action="Login" class="link-button">سجل دخولك من هنا</a>
+            </p>
+        </div>
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/js/auth-page.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,49 @@
+@model ProductsPageViewModel
+@{
+    ViewData["Title"] = "المنتجات";
+}
+
+<main class="site-shell">
+    <partial name="_SiteHeader" />
+
+    <section class="section-block">
+        <div class="section-heading">
+            <span class="tag">Products Table</span>
+            <h2>جدول المنتجات</h2>
+        </div>
+
+        <div class="table-wrap">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>اسم المنتج</th>
+                        <th>السعر</th>
+                        <th>الوصف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.PreviewProducts)
+                    {
+                        <tr>
+                            <td>@product.Name</td>
+                            <td>@product.Price EGP</td>
+                            <td>@product.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section-block">
+        <div class="section-heading">
+            <span class="tag">JSON Data</span>
+            <h2>اختار المنتجات وأضفها للكارت</h2>
+        </div>
+        <div id="course-products" class="products-grid"></div>
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/js/products-page.js" asp-append-version="true"></script>
+}

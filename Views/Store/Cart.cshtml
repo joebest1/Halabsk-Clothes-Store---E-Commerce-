@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "سلة التسوق";
+}
+
+<main class="site-shell">
+    <partial name="_SiteHeader" />
+
+    <section class="section-block">
+        <div class="section-heading">
+            <span class="tag">Cart</span>
+            <h2>سلة التسوق</h2>
+        </div>
+        <div class="cart-card">
+            <div class="table-wrap">
+                <table class="products-table cart-table">
+                    <thead>
+                        <tr>
+                            <th>المنتج</th>
+                            <th>السعر</th>
+                            <th>الكمية</th>
+                            <th>الإجمالي</th>
+                            <th>حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <tr>
+                            <td colspan="5" class="empty-cart">لم يتم اختيار منتجات بعد.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cart-summary">
+                <span>عدد القطع: <strong id="cart-count">0</strong></span>
+                <span>الإجمالي الكلي: <strong id="cart-total">0 EGP</strong></span>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/js/cart-page.js" asp-append-version="true"></script>
+}

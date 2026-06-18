@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "تسجيل الدخول";
+}
+
+<main class="page-shell auth-shell">
+    <section class="brand-panel">
+        <div class="brand-copy">
+            <span class="eyebrow">Clothes Brand</span>
+            <h1>هلبسك</h1>
+            <p>
+                ستايلك يبدأ من هنا. ادخل حسابك واستكشف قطع مختارة بعناية تجمع بين
+                الراحة، الجرأة، واللمسة العصرية.
+            </p>
+        </div>
+
+        <div class="feature-card feature-card-top">
+            <span>New Drop</span>
+            <strong>Summer Essentials 2026</strong>
+        </div>
+
+        <div class="feature-card feature-card-bottom">
+            <span>Members Only</span>
+            <strong>خصومات حصرية وتوصيات على ذوقك</strong>
+        </div>
+    </section>
+
+    <section class="login-panel">
+        <div class="login-card">
+            <div class="card-header">
+                <span class="tag">Welcome Back</span>
+                <h2>سجل دخولك</h2>
+                <p>استخدم بريدك الإلكتروني وكلمة المرور للوصول إلى حسابك.</p>
+            </div>
+
+            <form class="login-form" id="auth-form" data-mode="login" novalidate>
+                <label for="email">البريد الإلكتروني</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="name@example.com"
+                    autocomplete="email" />
+                <small class="field-error" data-error-for="email"></small>
+
+                <label for="password">كلمة المرور</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="••••••••"
+                    autocomplete="current-password" />
+                <small class="field-error" data-error-for="password"></small>
+
+                <div class="form-row">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember" />
+                        <span>تذكرني</span>
+                    </label>
+                    <a href="#">نسيت كلمة المرور؟</a>
+                </div>
+
+                <button type="submit" id="submit-button" class="primary-button">
+                    دخول
+                </button>
+            </form>
+
+            <p class="form-message" id="form-message" aria-live="polite"></p>
+
+            <div class="divider"><span>أو</span></div>
+
+            <div class="social-actions">
+                <a asp-controller="Account" asp-action="Signup" class="secondary-button link-button">
+                    إنشاء حساب جديد
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/js/auth-page.js" asp-append-version="true"></script>
+}
