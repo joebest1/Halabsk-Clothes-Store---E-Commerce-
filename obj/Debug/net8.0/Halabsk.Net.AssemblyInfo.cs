@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Halabsk.Net")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55e33eab2820a6a24e1b22da8ed64ba430b3bf1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3574f42b8755d98d74fecf29bc3cc5dc0ec257c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Halabsk.Net")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Halabsk.Net")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
