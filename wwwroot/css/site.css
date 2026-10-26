@@ -1,0 +1,29 @@
+.inline-form {
+  margin: 0;
+}
+
+.inline-form button {
+  margin: 0;
+}
+
+.header-user {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.link-button {
+  text-decoration: none;
+}
+
+.product-card button[disabled],
+.qty-btn[disabled],
+.remove-btn[disabled] {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.empty-state,
+.products-grid > p {
+  width: 100%;
+  text-align: center;
+}

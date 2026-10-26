@@ -1,0 +1,53 @@
+@model ProductCreateRequest
+@{
+    ViewData["Title"] = "إضافة منتج";
+}
+
+<main class="site-shell">
+    <partial name="_SiteHeader" />
+
+    <section class="section-block">
+        <div class="section-heading">
+            <span class="tag">Admin</span>
+            <h2>إضافة منتج جديد</h2>
+        </div>
+
+        @if (TempData["AdminMessage"] is string message)
+        {
+            <p class="form-message success-message" aria-live="polite">@message</p>
+        }
+
+        <form asp-action="CreateProduct" asp-controller="Admin" method="post" class="contact-form admin-product-form">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="form-message error-message"></div>
+
+            <label asp-for="Category">القسم</label>
+            <select asp-for="Category">
+                <option value="">اختار القسم</option>
+                <option value="pants">بناطيل</option>
+                <option value="jackets">جاكيتات</option>
+                <option value="tshirts">تيشيرتات</option>
+            </select>
+            <span asp-validation-for="Category" class="field-error"></span>
+
+            <label asp-for="Name">اسم المنتج</label>
+            <input asp-for="Name" type="text" placeholder="مثال: تيشيرت أوفر سايز" />
+            <span asp-validation-for="Name" class="field-error"></span>
+
+            <label asp-for="Price">السعر</label>
+            <input asp-for="Price" type="number" min="1" step="0.01" placeholder="مثال: 450" />
+            <span asp-validation-for="Price" class="field-error"></span>
+
+            <label asp-for="Description">الوصف</label>
+            <textarea asp-for="Description" rows="4" placeholder="وصف مختصر للمنتج"></textarea>
+            <span asp-validation-for="Description" class="field-error"></span>
+
+            <label asp-for="Image">رابط الصورة</label>
+            <input asp-for="Image" type="url" placeholder="https://example.com/product.jpg" />
+            <span asp-validation-for="Image" class="field-error"></span>
+
+            <button type="submit" class="primary-button">إضافة المنتج</button>
+        </form>
+    </section>
+</main>
